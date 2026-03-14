@@ -121,29 +121,52 @@
   border-radius: 50%;
   filter: drop-shadow(0 0 30px var(--primary-glow));
   background: black;
+  position: relative;
+  z-index: 2;
+  animation: logoPulse 4s infinite ease-in-out;
 }
 
+@keyframes logoPulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 30px var(--primary-glow)); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 50px var(--primary-glow)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 30px var(--primary-glow)); }
+}
 
-.orbital, .orbital2 {
+.orbital, .orbital2, .orbital3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 1px solid rgba(57, 255, 20, 0.2);
+  border: 1px solid rgba(57, 255, 20, 0.15);
   border-radius: 50%;
   transform: translate(-50%, -50%);
+  transition: var(--transition-slow);
 }
 
 .orbital {
-  width: 400px;
-  height: 400px;
-  animation: rotate 20s linear infinite;
+  width: 420px;
+  height: 420px;
+  animation: rotate 25s linear infinite, pulseInAndOut 6s infinite ease-in-out;
 }
 
 .orbital2 {
-  width: 550px;
-  height: 550px;
-  animation: rotate-reverse 30s linear infinite;
+  width: 580px;
+  height: 580px;
+  animation: rotate-reverse 35s linear infinite, pulseInAndOut 8s infinite ease-in-out 1s;
 }
+
+.orbital3 {
+  width: 750px;
+  height: 750px;
+  border: 1px dashed rgba(57, 255, 20, 0.05);
+  animation: rotate 50s linear infinite;
+}
+
+@keyframes pulseInAndOut {
+  0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.3; }
+}
+
 
 @keyframes rotate {
   from { transform: translate(-50%, -50%) rotate(0deg); }
@@ -242,6 +265,7 @@
   .heroContent {
     grid-template-columns: 1fr;
     text-align: center;
+    padding-top: 4rem;
   }
   
   .heroText {
@@ -250,7 +274,8 @@
   
   .heroVisual {
     order: 1;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
+    transform: scale(0.85);
   }
   
   .subtitle {
@@ -259,6 +284,13 @@
   
   .heroActions {
     justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .primaryBtn, .secondaryBtn {
+    width: 100%;
+    max-width: 300px;
   }
   
   .pillarsGrid {
@@ -266,3 +298,24 @@
     gap: 3rem;
   }
 }
+
+@media (max-width: 640px) {
+  .heroVisual {
+    transform: scale(0.65);
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .home {
+    padding-top: 60px;
+  }
+  
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+

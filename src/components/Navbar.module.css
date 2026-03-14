@@ -140,5 +140,19 @@
   
   .mobileMenuBtn {
     display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .logoText {
+    font-size: 1.1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .logoText {
+    display: none;
+  }
+}
+

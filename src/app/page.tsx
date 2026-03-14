@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FlaskConical, ShieldCheck, Zap, Microscope } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
+import BackgroundParticles from '@/components/BackgroundParticles';
 import { PRODUCTS } from '@/data/products';
 import styles from './page.module.css';
 
@@ -13,6 +14,7 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
+      <BackgroundParticles />
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroGlow} />
@@ -48,11 +50,12 @@ export default function Home() {
               <img src="/logo.jpg" alt="Helix Labs Logo" className={styles.mainLogo} />
               <div className={styles.orbital} />
               <div className={styles.orbital2} />
+              <div className={styles.orbital3} />
             </div>
           </motion.div>
-
         </div>
       </section>
+
 
       {/* Featured Section */}
       <section className={styles.featured}>
