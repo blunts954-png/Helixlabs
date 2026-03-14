@@ -1,0 +1,262 @@
+.cart {
+  padding: 120px 0;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cartItem {
+  display: grid;
+  grid-template-columns: 100px 1fr auto auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.itemImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.itemInfo h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.itemPrice {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--background);
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.quantityControls button {
+  color: var(--text-muted);
+}
+
+.quantityControls button:hover {
+  color: white;
+}
+
+.removeBtn {
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.removeBtn:hover {
+  color: var(--error);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.modeSelection {
+  padding: 1.5rem;
+  background: var(--secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.modeSelection h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modeTabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.modeTabs button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 12px;
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+.activeTab {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  background: rgba(57, 255, 20, 0.05) !important;
+}
+
+.modeContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modeContent label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.zipInputWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.zipInputWrapper input {
+  flex: 1;
+}
+
+.zipInputWrapper button {
+  background: white;
+  color: black;
+  padding: 0 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.successText {
+  color: var(--primary);
+  font-size: 0.85rem;
+}
+
+.locAddress {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.summaryCard {
+  padding: 2rem;
+  background: var(--secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.summaryCard h3 {
+  margin-bottom: 2rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.totalRow {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.checkoutBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: #000;
+  padding: 1.25rem;
+  border-radius: 4px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2rem;
+  transition: var(--transition-fast);
+}
+
+.checkoutBtn:hover {
+  box-shadow: 0 0 20px var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+.emptyCart {
+  padding: 160px 0;
+  text-align: center;
+}
+
+.emptyCart h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.emptyCart p {
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.shopBtn {
+  background: var(--primary);
+  color: #000;
+  padding: 1rem 3rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cartItem {
+    grid-template-columns: 80px 1fr;
+  }
+  
+  .itemInfo {
+    grid-column: 2 / -1;
+  }
+  
+  .quantityControls {
+    grid-column: 2;
+  }
+  
+  .removeBtn {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
